@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message {
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+
+      .message.error {
+        color: red;
+      }
+      .message.ok {
+        color: green;
+      }
+
+    </style>
+
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/app.js"></script>
+  </head>
+
+  <body ng-app="LunchCheck">
+    <div class="container" ng-controller="LunchCheckController">
+      <h1>Lunch Checker</h1>
+
+      <div class="form-group">
+        <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control" ng-model="menu">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" ng-click="checkMenu()">Check If Too Much</button>
+      </div>
+      <div class="form-group message {{checkStatus}}">
+        {{message}}
+      </div>
+    </div>
+
+    <hr>
+    <div class="container">
+      <p>
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        I'm using
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">Array.prototype.map()</a>
+        and
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Array.prototype.filter()</a>
+        in order to validate there are actual values entered in the comma-separated list.
+      </p>
+
+      <p>
+        Both methods <a href="http://caniuse.com/#feat=es5">seem</a> to be widely supported by different browsers
+      </p>
+    </div>
+
+  </body>
+
+</html>
