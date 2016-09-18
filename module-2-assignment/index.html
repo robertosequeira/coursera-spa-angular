@@ -76,8 +76,8 @@
           <div class="panel panel-default" ng-class="{ 'panel-danger': !boughtList.items.length, 'panel-success': boughtList.finishedShopping() }">
             <div class="panel-body">
               <ul class="list-group">
-                <li class="list-group-item Error: source does not appear to be markup." ng-repeat="item in boughtList.items ">
-                  Bought {{item.quantity}} {{item.name}}
+                <li class="list-group-item" ng-repeat="item in boughtList.items ">
+                  <span>Bought {{item.quantity}} {{item.name}}</span>
                   <span class="glyphicon glyphicon-ok pull-right green"></span>
                 </li>
               </ul>
