@@ -1,0 +1,16 @@
+<ul id="items-list" class="list-group">
+  <li class="list-group-item" ng-repeat="item in items">
+
+    <button ng-click="onRemove({index: $index});" type="button" class="btn btn-danger pull-right">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      Don't want this one!
+    </button>
+
+    <span class="label label-success">{{item.short_name }}</span>
+    <span class="item-name">{{ item.name }}</span>
+    <br>
+    <span class="item-description">{{ item.description }}</span>
+  </li>
+</ol>
+
+<div ng-if="message.length > 0" class="alert alert-danger" role="alert">{{ message }}</div>
