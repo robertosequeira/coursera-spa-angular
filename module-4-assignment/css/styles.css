@@ -8,16 +8,7 @@ body {
   display: none;
 }
 
-.loading-icon {
-  position: absolute;
-  left: 50%;
-  top: 10px;
+ul {
+  max-height: 230px;
+  overflow-y: scroll;
 }
-
-/*li[ui-sref]:hover {
-  display: inline-block;
-  cursor: pointer;
-  border: solid black 1px;
-  padding-left: 5px;
-  padding-right: 5px;
-}*/

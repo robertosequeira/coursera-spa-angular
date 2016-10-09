@@ -5,7 +5,6 @@
     .controller('ItemsController', ItemsController);
 
   ItemsController.$inject = ['$rootScope', '$scope', 'items'];
-
   function ItemsController($rootScope, $scope, items) {
     var $ctrl = this;
 

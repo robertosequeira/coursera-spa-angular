@@ -17,15 +17,19 @@
     ////////////
 
     function getAllCategories() {
-      $rootScope.$broadcast('categories.load', {on: true});
 
       return $http
         .get(ApiBasePath + "/categories.json")
-        .then(getCategoriesComplete);
+        .then(getCategoriesComplete)
+        .catch(getCategoriesFailed);
 
       function getCategoriesComplete(data) {
-        $rootScope.$broadcast('categories.load', {on: false});
         return data.data;
+      }
+
+      function getCategoriesFailed(e) {
+        console.log('Error loading categories data');
+        throw e;
       }
     }
 
@@ -37,11 +41,18 @@
             category: categoryShortName
           }
         })
-        .then(getItemsComplete);
+        .then(getItemsComplete)
+        .catch(getItemsFailed);
 
       function getItemsComplete(data) {
         $rootScope.$broadcast('items.load', {on: false});
         return data.data.menu_items;
+      }
+
+      function getItemsFailed(e) {
+        $rootScope.$broadcast('items.load', {on: false});
+        console.log('Error loading items data');
+        throw e;
       }
     }
   }
