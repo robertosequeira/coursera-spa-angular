@@ -12,3 +12,7 @@ ul {
   max-height: 230px;
   overflow-y: scroll;
 }
+
+li[ui-sref]:hover {
+  font-weight: bold;;
+}
